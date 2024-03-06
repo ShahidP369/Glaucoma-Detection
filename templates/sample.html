@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Glaucoma Detection</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"> -->
+    <style>
+        /* body { */
+            /* background-image: url('https://i.ytimg.com/vi/gKhTgIHXK8c/maxresdefault.jpg'); */
+
+            /* background-color: aqua;
+            height: 100%; */
+        /* } */
+        /* .background-img{
+
+            background-color: black;
+        } */
+    </style>
+</head>
+
+<body>
+<div><br>
+    <br><br>
+    <br>
+    <br><br><br>
+    <br>
+    <br>
+ <div class="container-fluid bg-transparent">
+
+    <nav class="navbar  bg-transparent">
+        <div class="container bg-transparent">
+            <a class="navbar-brand" href="#" style="color: white; font-size: 80px;">Glaucoma Detection </a>
+            <!-- <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Help</button> -->
+        </div>
+    </nav>
+    <div class="container">
+        <div id="content" style="margin-top:2em">
+            <h2 style="color: white;">Upload Image</h2>
+            <form action="/predict" method="post" enctype="multipart/form-data">
+                <label for="imageUpload" class="upload-label">
+                    Choose
+                </label>
+                <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+                <button type="submit" class="btn btn-primary btn-lg" id="btn-predict">Predict!</button>
+            </form>
+<br>
+<br>
+<br>
+
+            <h2 id="result" style="color: white;">
+
+                {% if result %}
+                {{ result }}
+                {% endif %}
+            </h2>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+</html>
